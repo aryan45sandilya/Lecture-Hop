@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: lecture-hop-api
+    env: node
+    buildCommand: npm install && esbuild server.ts --bundle --platform=node --format=esm --packages=external --sourcemap --outdir=dist
+    startCommand: node dist/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PORT
+        value: 10000
