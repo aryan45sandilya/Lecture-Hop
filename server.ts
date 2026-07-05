@@ -690,6 +690,11 @@ IMPORTANT: Return ONLY valid JSON, no markdown, no explanation.`;
 }
 
 // ================= API ENDPOINTS =================
+// GET /api/health
+app.get("/api/health", (_req, res) => {
+  res.json({ status: "ok" });
+});
+
 
 // POST /api/playlists/analyze
 app.post("/api/playlists/analyze", (req, res) => {
