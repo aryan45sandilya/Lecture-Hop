@@ -759,7 +759,7 @@ async function startServer() {
     // In dev mode, Vite runs separately via `npm run dev:ui`
     // Just serve the API here
   } else {
-    const distPath = path.join(__dirname, 'dist');
+    const distPath = path.join(__dirname, '..', 'dist');
     app.use(express.static(distPath));
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
